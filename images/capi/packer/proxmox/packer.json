@@ -86,9 +86,7 @@
     },
     {
       "expect_disconnect": true,
-      "inline": [
-        "sudo reboot now"
-      ],
+      "inline": ["sudo reboot now"],
       "inline_shebang": "/bin/bash -e",
       "type": "shell"
     },
@@ -117,9 +115,7 @@
       "format_options": "{{user `goss_format_options`}}",
       "goss_file": "{{user `goss_entry_file`}}",
       "inspect": "{{user `goss_inspect_mode`}}",
-      "tests": [
-        "{{user `goss_tests_dir`}}"
-      ],
+      "tests": ["{{user `goss_tests_dir`}}"],
       "type": "goss",
       "url": "{{user `goss_url`}}",
       "use_sudo": true,
@@ -154,10 +150,10 @@
     "containerd_sha256": null,
     "containerd_url": "https://github.com/containerd/containerd/releases/download/v{{user `containerd_version`}}/cri-containerd-cni-{{user `containerd_version`}}-linux-amd64.tar.gz",
     "containerd_version": null,
-    "cores": "2",
+    "cores": "8",
     "crictl_url": "https://github.com/kubernetes-sigs/cri-tools/releases/download/v{{user `crictl_version`}}/crictl-v{{user `crictl_version`}}-linux-amd64.tar.gz",
     "crictl_version": null,
-    "disk_size": "20G",
+    "disk_size": "6G",
     "existing_ansible_ssh_args": "{{env `ANSIBLE_SSH_ARGS`}}",
     "http_directory": "./packer/proxmox/linux/{{user `distro_name`}}/http/",
     "iso_storage_pool": "{{env `PROXMOX_ISO_POOL`}}",
@@ -179,10 +175,10 @@
     "kubernetes_semver": null,
     "kubernetes_series": null,
     "kubernetes_source_type": null,
-    "memory": "2048",
+    "memory": "16384",
     "node": "{{env `PROXMOX_NODE`}}",
     "proxmox_url": "{{env `PROXMOX_URL`}}",
-    "sockets": "2",
+    "sockets": "1",
     "ssh_password": "builder",
     "ssh_username": "builder",
     "storage_pool": "{{env `PROXMOX_STORAGE_POOL`}}",
