@@ -147,12 +147,12 @@
     pattern: "*.yaml"
   register: netplan_files
 
-# - name: Delete netplan files
-#   ansible.builtin.file:
-#     state: absent
-#     path: "{{ item.path }}"
-#   loop: "{{ netplan_files.files }}"
-#   when: netplan_files.files is defined and (netplan_files.files|length>0)
+- name: Delete netplan files
+  ansible.builtin.file:
+    state: absent
+    path: "{{ item.path }}"
+  loop: "{{ netplan_files.files }}"
+  when: netplan_files.files is defined and (netplan_files.files|length>0)
 
 - name: Create netplan for KubeVirt
   vars:
