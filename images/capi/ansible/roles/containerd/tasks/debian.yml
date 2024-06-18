@@ -16,3 +16,9 @@
   ansible.builtin.apt:
     name: libseccomp2
     state: present
+
+- name: Disable Hyper-V KVP protocol daemon to prevent timeout on startup
+  ansible.builtin.systemd:
+    name: hv-kvp-daemon
+    state: stopped
+    enabled: false
